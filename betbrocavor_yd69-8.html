@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Betbrocavor — YD69</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#07111f;color:#fff}
+header{padding:18px 20px;background:#0b1728;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #1b314c}
+.logo{font-size:24px;font-weight:900;letter-spacing:1px}.logo span{color:#31d6ff}
+.sign{font-size:30px;border:2px solid #31d6ff;border-radius:14px;padding:5px 10px}
+.hero{padding:32px 20px;text-align:center;background:linear-gradient(145deg,#0b1e34,#07111f)}
+.hero h1{font-size:38px;margin:8px 0}.hero p{color:#a9bfd5}.tag{display:inline-block;background:#102b45;color:#31d6ff;padding:8px 14px;border-radius:20px;font-weight:bold}
+.wrap{max-width:900px;margin:auto;padding:20px}.title{display:flex;justify-content:space-between;align-items:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.card{background:#0d1b2c;border:1px solid #1d3652;border-radius:18px;padding:18px;box-shadow:0 8px 25px #0004}
+.league{font-size:12px;color:#7fa0bc;text-transform:uppercase}.teams{font-size:19px;font-weight:bold;margin:10px 0}.tip{color:#31d6ff;font-weight:800}.confidence{color:#9fe870;margin-top:8px}
+button{border:0;background:#31d6ff;color:#03101c;font-weight:900;padding:12px 18px;border-radius:12px}
+footer{text-align:center;padding:30px;color:#7891a9;font-size:13px}
+
+.admin{margin-top:25px;background:#0b1728;border:1px solid #254765;border-radius:18px;padding:20px}
+.admin h2{margin-top:0}.form{display:grid;gap:10px}.form input,.form select,.form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #29445f;background:#07111f;color:#fff}
+.form textarea{min-height:90px;resize:vertical}.pred-list{display:grid;gap:10px;margin-top:18px}.pred{background:#102237;border-radius:12px;padding:14px;border-left:4px solid #31d6ff}.pred small{color:#7891a9}.danger{background:#d9534f;color:#fff;margin-top:8px}
+.login{background:#102237;border-radius:12px;padding:14px;margin-bottom:15px}
+</style>
+</head>
+<body>
+<header><div class="logo">BET<span>BROCAVOR</span></div><div class="sign">✋🏽 <b>YD69</b></div></header>
+<section class="hero">
+ <div class="tag">YD69 FOOTBALL HUB</div>
+ <h1>Match Tips & Analysis ⚽</h1>
+ <p>Uchambuzi wa mechi, form, magoli na prediction — mpira tu.</p>
+ <button onclick="alert('Sehemu ya Tips iko tayari!')">ANGALIA TIPS</button>
+</section>
+
+<section class="wrap">
+ <div class="title"><h2>👑 VIP Zone</h2><span>Premium</span></div>
+ <div class="cards">
+  <article class="card">
+   <div class="league">🔐 VIP TIPS</div>
+   <div class="teams">Premium Match Analysis</div>
+   <div>Prediction: <span class="tip">VIP Pick</span></div>
+   <div>Detailed form & goal analysis</div>
+   <div class="confidence">⭐ VIP Members</div>
+   <button onclick="alert('VIP Zone iko tayari — tunaweza kuongeza mfumo wa kuingia/wanachama hapa.')">FUNGUA VIP</button>
+  </article>
+  <article class="card">
+   <div class="league">🎯 VIP PREDICTION</div>
+   <div class="teams">Daily VIP Selection</div>
+   <div>Full Time: <span class="tip">Premium Pick</span></div>
+   <div>Goals: <span class="tip">Analysis</span></div>
+   <div class="confidence">📊 Detailed Stats</div>
+  </article>
+  <article class="card">
+   <div class="league">🏆 VIP RESULTS</div>
+   <div class="teams">VIP History</div>
+   <div>Previous results & performance</div>
+   <div class="confidence">Updated daily</div>
+  </article>
+ </div>
+</section>
+
+<main class="wrap">
+ <div class="title"><h2>🔥 Top Matches</h2><span>Leo</span></div>
+ <div class="cards">
+  <article class="card"><div class="league">Football Analysis</div><div class="teams">Team A 🆚 Team B</div><div>Full Time: <span class="tip">Team A</span></div><div>Goals: <span class="tip">Over 1.5</span></div><div class="confidence">Confidence: High</div></article>
+  <article class="card"><div class="league">Football Analysis</div><div class="teams">Team C 🆚 Team D</div><div>Full Time: <span class="tip">Team C / Draw</span></div><div>Goals: <span class="tip">Over 1.5</span></div><div class="confidence">Confidence: Medium</div></article>
+  <article class="card"><div class="league">Football Analysis</div><div class="teams">Team E 🆚 Team F</div><div>Goals: <span class="tip">Over 2.5</span></div><div>Score idea: <span class="tip">2–1</span></div><div class="confidence">Confidence: Medium</div></article>
+ </div>
+</main>
+
+<section class="wrap">
+ <div class="admin">
+  <h2>👑 YD69 ADMIN PANEL</h2>
+  <p style="color:#9ab1c7">Sehemu hii ni ya wewe tu kuweka na kusimamia predictions.</p>
+
+  <div class="login">
+   <input id="adminKey" type="password" placeholder="Admin password">
+   <button onclick="unlockAdmin()">INGIA ADMIN</button>
+   <span id="loginMsg" style="margin-left:8px"></span>
+  </div>
+
+  <div id="adminArea" style="display:none">
+   <form class="form" onsubmit="addPrediction(event)">
+    <input id="match" required placeholder="Mfano: Arsenal vs Chelsea">
+    <input id="prediction" required placeholder="Prediction (Mfano: Arsenal)">
+    <input id="goals" placeholder="Goals (Mfano: Over 1.5)">
+    <select id="confidence">
+     <option>High</option><option>Medium</option><option>Low</option>
+    </select>
+    <textarea id="analysis" placeholder="Andika uchambuzi wako..."></textarea>
+    <button type="submit">➕ WEKA PREDICTION</button>
+   </form>
+   <div id="predictions" class="pred-list"></div>
+  </div>
+ </div>
+</section>
+
+<script>
+const ADMIN_PASSWORD = "daxleck"; // badilisha password hii kabla ya kuweka site online
+let predictions = JSON.parse(localStorage.getItem("yd69_predictions") || "[]");
+
+function unlockAdmin(){
+ const key=document.getElementById("adminKey").value;
+ if(key===ADMIN_PASSWORD){
+   document.getElementById("adminArea").style.display="block";
+   document.getElementById("loginMsg").textContent="✅ Umeingia";
+   renderPredictions();
+ } else {
+   document.getElementById("loginMsg").textContent="❌ Password si sahihi";
+ }
+}
+function addPrediction(e){
+ e.preventDefault();
+ predictions.unshift({
+   match:document.getElementById("match").value,
+   prediction:document.getElementById("prediction").value,
+   goals:document.getElementById("goals").value,
+   confidence:document.getElementById("confidence").value,
+   analysis:document.getElementById("analysis").value
+ });
+ localStorage.setItem("yd69_predictions",JSON.stringify(predictions));
+ e.target.reset();
+ renderPredictions();
+}
+function deletePrediction(i){
+ predictions.splice(i,1);
+ localStorage.setItem("yd69_predictions",JSON.stringify(predictions));
+ renderPredictions();
+}
+function renderPredictions(){
+ const box=document.getElementById("predictions");
+ box.innerHTML=predictions.map((x,i)=>`
+  <div class="pred">
+   <b>${escapeHtml(x.match)}</b><br>
+   🎯 ${escapeHtml(x.prediction)}<br>
+   ⚽ ${escapeHtml(x.goals || "—")}<br>
+   📊 ${escapeHtml(x.confidence)}<br>
+   <small>${escapeHtml(x.analysis || "")}</small><br>
+   <button class="danger" onclick="deletePrediction(${i})">Futa</button>
+  </div>`).join("");
+}
+function escapeHtml(s){
+ return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+}
+</script>
+
+<footer>© 2026 Betbrocavor • YD69 ✋🏽</footer>
+</body>
+</html>
